@@ -18,23 +18,18 @@ public class Main {
             input = inputScanner.nextLine();
             switch (input) {
                 case "add":
-                    System.out.println();
                     System.out.println(ConsoleColors.YELLOW + "Here you can add tasks" + ConsoleColors.RESET);
                     break;
                 case "remove":
-                    System.out.println();
                     System.out.println(ConsoleColors.YELLOW + "Here you can remove tasks" + ConsoleColors.RESET);
                     break;
                 case "list":
-                    System.out.println();
-                    TasksFileHandler.getTasksArray();
-                    //System.out.println(ConsoleColors.YELLOW + "Here you can list the tasks" + ConsoleColors.RESET);
+                    Printer.printTasksList();
                     break;
                 case "exit":
                     System.out.println(ConsoleColors.RED_BOLD + "Bye, bye!");
                     break;
                 default:
-                    System.out.println();
                     System.out.println(ConsoleColors.RED + "Unknown option! Please select one of the options listed below:" + ConsoleColors.RESET);
                     Printer.printOptions();
             }
