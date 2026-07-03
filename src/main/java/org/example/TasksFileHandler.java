@@ -11,7 +11,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
-
+import org.apache.commons.lang3.ArrayUtils;
 
 public class TasksFileHandler {
 
@@ -95,7 +95,7 @@ public class TasksFileHandler {
             }
         }
 
-        String[][] shortenedTasksList = getShortenedTasksList(oldTasksArray, removedTaskIndex);
+        String[][] shortenedTasksList = getShortenedTasksListWithApacheCommonUtils(oldTasksArray, removedTaskIndex);
 
         writeTasksArrayToCsv(shortenedTasksList, TASKS_FILE_NAME);
     }
@@ -139,5 +139,10 @@ public class TasksFileHandler {
             e.printStackTrace();
         }
 
+    }
+
+    private static String[][] getShortenedTasksListWithApacheCommonUtils(String[][] oldTasksArray, int removedRowIndex) {
+        String[][] returnedArray = ArrayUtils.remove(oldTasksArray, removedRowIndex);
+        return returnedArray;
     }
 }
