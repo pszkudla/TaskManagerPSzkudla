@@ -27,7 +27,8 @@ public class Main {
                     break;
                 case "list":
                     System.out.println();
-                    System.out.println(ConsoleColors.YELLOW + "Here you can list the tasks" + ConsoleColors.RESET);
+                    TasksFileHandler.getTasksArray();
+                    //System.out.println(ConsoleColors.YELLOW + "Here you can list the tasks" + ConsoleColors.RESET);
                     break;
                 case "exit":
                     System.out.println(ConsoleColors.RED_BOLD + "Bye, bye!");
