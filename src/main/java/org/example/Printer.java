@@ -6,6 +6,7 @@ public class Printer {
         for (String option : programOptions) {
             System.out.println(option);
         }
+        System.out.println();
     }
 
     public static void printTasksList() {

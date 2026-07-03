@@ -48,7 +48,17 @@ public class TasksFileHandler {
         String taskName = addedTaskScanner.nextLine();
 
         System.out.println("Enter task due date in a YYYY-MM-DD format and press enter: ");
-        String taskDueDate = addedTaskScanner.nextLine();
+        String taskDueDate;
+        while (true) {
+            taskDueDate = addedTaskScanner.nextLine();
+            if (taskDueDate.matches("^\\d{4}\\-(0[1-9]|1[012])\\-(0[1-9]|[12][0-9]|3[01])$")) {
+                break;
+            }
+            else {
+                System.out.println("Invalid task due date. Enter the date in the YYYY-MM-DD format.");
+            }
+        }
+
 
         System.out.println("Enter task importance (true/false) and press enter:");
         String taskImportance = addedTaskScanner.nextLine();
@@ -77,11 +87,11 @@ public class TasksFileHandler {
                     break;
                 }
                 else {
-                    System.out.println(ConsoleColors.RED + "Podałeś indeks spoza zakresu. Podaj prawidłowy indeks zadania." + ConsoleColors.RESET);
+                    System.out.println(ConsoleColors.RED + "Index out of range. Write a correct index." + ConsoleColors.RESET);
                 }
             }
             catch (NumberFormatException e) {
-                System.out.println(ConsoleColors.RED_BOLD + "Podany przez Ciebie indeks nie jest liczbą całkowitą int. Podaj prawidłowy indeks zadania." + ConsoleColors.RESET);
+                System.out.println(ConsoleColors.RED_BOLD + "The value you provided is not int. Please provide a correct value." + ConsoleColors.RESET);
             }
         }
 
