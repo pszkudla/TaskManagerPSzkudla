@@ -2,6 +2,7 @@ package org.example;
 
 import java.util.Scanner;
 
+
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
@@ -18,10 +19,10 @@ public class Main {
             input = inputScanner.nextLine();
             switch (input) {
                 case "add":
-                    System.out.println(ConsoleColors.YELLOW + "Here you can add tasks" + ConsoleColors.RESET);
+                    TasksFileHandler.addTask();
                     break;
                 case "remove":
-                    System.out.println(ConsoleColors.YELLOW + "Here you can remove tasks" + ConsoleColors.RESET);
+                    TasksFileHandler.removeTask();
                     break;
                 case "list":
                     Printer.printTasksList();
@@ -31,7 +32,6 @@ public class Main {
                     break;
                 default:
                     System.out.println(ConsoleColors.RED + "Unknown option! Please select one of the options listed below:" + ConsoleColors.RESET);
-                    Printer.printOptions();
             }
         }
 
